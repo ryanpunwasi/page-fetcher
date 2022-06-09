@@ -12,6 +12,8 @@ request(args[0], (error, response, body) => {
       console.log(`Downloaded and saved ${body.length} bytes to ${args[1]}`);
     }
   });
+  } else if (error.code === 'ENOTFOUND') {
+    console.log("You entered an invalid url.");
   }
 });
 
